@@ -1,10 +1,10 @@
-from p_hm.pages.main_page import MainPage
-from p_hm.pages.result_page import ResultPage
-from p_hm.pages.signin_page import SigninPage
-from p_hm.pages.member_page import MemberPage
-from p_hm.pages.cart_page import CartPage
-from p_hm.pages.image_page import ImagePage
-from p_hm.pages.product_page import ProductPage
+from pages.main_page import MainPage
+from pages.result_page import ResultPage
+from pages.signin_page import SigninPage
+from pages.member_page import MemberPage
+from pages.cart_page import CartPage
+from pages.image_page import ImagePage
+from pages.product_page import ProductPage
 
 
 class Application:
