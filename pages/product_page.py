@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from p_hm.pages.base_page import Page
+from pages.base_page import Page
 from time import sleep
 
 class ProductPage(Page):
@@ -20,14 +20,13 @@ class ProductPage(Page):
         self.click(*self.CHOOSE_SIZE_LOCATOR)
 
     def click_add(self):
-         self.click(*self.ADD_TO_CART_LOCATOR)
-         sleep(2)
+        self.wait_for_element_click(*self.ADD_TO_CART_LOCATOR)
+         # self.click(*self.ADD_TO_CART_LOCATOR)
+         # sleep(2)
 
     def check_cart_item_number(self):
-        sleep(2)
-        #wait = WebDriverWait(self.driver, 5)
-        #wait.until(EC.presence_of_element_located(self.COUNT_ITEM_LOCATOR))
-        #wait.until(EC.presence_of_element_located((By.XPATH, "//span[@class='shoppingbag-item-count']")))
+        self.wait_for_element_appear(*self.COUNT_ITEM_LOCATOR)
+        #sleep(2)
         elem = self.driver.find_element(*self.COUNT_ITEM_LOCATOR)
         print('Item number in the shopping bag = ',elem.text)
         strnum = elem.text

@@ -13,6 +13,7 @@ def input_text_search_box(context, search_text):
 
 @when('Search product {search_text}')
 def Search_product(context, search_text):
+    sleep(4)
     print('search_text = ', search_text)
     context.app.main_page.search_product(search_text)
     context.app.save_current_window()

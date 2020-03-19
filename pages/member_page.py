@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
-from p_hm.pages.base_page import Page
+from pages.base_page import Page
 from time import sleep
 
 class MemberPage(Page):
@@ -41,5 +41,6 @@ class MemberPage(Page):
        self.click(*self.CHECKBOX_LOCATOR)
 
    def click_submit_button(self):
-       self.click(*self.SUBMIT_LOCATOR)
-       sleep(2)
+       self.wait_for_element_click(*self.SUBMIT_LOCATOR)
+       # self.click(*self.SUBMIT_LOCATOR)
+       # sleep(2)
