@@ -25,5 +25,6 @@ class SigninPage(Page):
         self.input(text_password, *self.PASSWORD_SIGNIN_INPUT)
 
     def click_submit_signin_button(self):
-        self.click(*self.SUBMIT_SIGNIN_LOCATOR)
-        sleep(2)
+        self.wait_for_element_click(*self.SUBMIT_SIGNIN_LOCATOR)
+        # self.click(*self.SUBMIT_SIGNIN_LOCATOR)
+        # sleep(2)

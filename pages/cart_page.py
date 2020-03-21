@@ -11,7 +11,9 @@ class CartPage(Page):
    REMOVE_ITEM_LOCATOR = (By.XPATH, "//li[@class='CartItem-module_item__2FmSw']//button[@aria-label='Remove']")
 
    def click_cart_button(self):
-        self.click(*self.CART_LOCATOR)
+       sleep(2)
+       self.wait_for_element_click(*self.CART_LOCATOR)
+       #self.click(*self.CART_LOCATOR)
 
    def verify_cart_title(self, text_title: str):
        self.verify_element_text(text_title, *self.TOOL_BAR_CART_TEXT)

@@ -42,5 +42,3 @@ class MemberPage(Page):
 
    def click_submit_button(self):
        self.wait_for_element_click(*self.SUBMIT_LOCATOR)
-       # self.click(*self.SUBMIT_LOCATOR)
-       # sleep(2)

@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import Page
-from time import sleep
 
 class ImagePage(Page):
 
@@ -26,6 +25,6 @@ class ImagePage(Page):
         self.click(*self.IMG_FIRST_ITEM)
 
     def click_second_item(self):
-        self.click(*self.IMG_SECOND_ITEM)
+        self.wait_for_element_click(*self.IMG_SECOND_ITEM)
 
 

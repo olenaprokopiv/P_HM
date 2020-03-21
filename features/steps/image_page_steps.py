@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
 @given('Open H&M Skirts page')
 def open_hm(context):

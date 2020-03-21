@@ -2,7 +2,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import Page
-from time import sleep
 
 class MainPage(Page):
     SEARCH_INPUT = (By.ID, 'main-search')
@@ -14,17 +13,15 @@ class MainPage(Page):
 
     def search_product(self, text: str):
         print('text = ', text)
+        self.wait.until(EC.element_to_be_clickable(self.SEARCH_INPUT))
         self.input(text, *self.SEARCH_INPUT)
         self.wait_for_element_click(*self.SEARCH_ICON)
-        # sleep(4)
-        #self.click(*self.SEARCH_ICON)
 
     def input_text_search_box(self, text: str):
         search_box = self.driver.find_element(*self.SEARCH_INPUT)
         ActionChains(self.driver).move_to_element(search_box).perform()
         self.wait_for_element_appear(*self.SEARCH_INPUT)
         self.input(text, *self.SEARCH_INPUT)
-        #sleep(2)
 
     def count_suggestions(self, expected_num: int):
         sugg_item_list = self.driver.find_elements(*self.SUGGESTION_ITEM)

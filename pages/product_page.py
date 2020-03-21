@@ -16,17 +16,14 @@ class ProductPage(Page):
     BLACK_CALOR_LOCATOR = (By.XPATH, "//ul[@class='group']//a[@title='Black']")
 
     def click_select_size(self):
-        self.click(*self.SELECT_SIZE_LOCATOR)
-        self.click(*self.CHOOSE_SIZE_LOCATOR)
+        self.wait_for_element_click(*self.SELECT_SIZE_LOCATOR)
+        self.wait_for_element_click(*self.CHOOSE_SIZE_LOCATOR)
 
     def click_add(self):
         self.wait_for_element_click(*self.ADD_TO_CART_LOCATOR)
-         # self.click(*self.ADD_TO_CART_LOCATOR)
-         # sleep(2)
 
     def check_cart_item_number(self):
         self.wait_for_element_appear(*self.COUNT_ITEM_LOCATOR)
-        #sleep(2)
         elem = self.driver.find_element(*self.COUNT_ITEM_LOCATOR)
         print('Item number in the shopping bag = ',elem.text)
         strnum = elem.text
@@ -48,5 +45,4 @@ class ProductPage(Page):
             print('not found')
 
     def click_black(self):
-         self.click(*self.BLACK_CALOR_LOCATOR)
-         sleep(2)
+         self.wait_for_element_click(*self.BLACK_CALOR_LOCATOR)

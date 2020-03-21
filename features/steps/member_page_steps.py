@@ -1,6 +1,4 @@
-from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
 @when('Click on member menu item')
 def click_member_menu_item(context):
