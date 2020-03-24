@@ -26,3 +26,7 @@ def count_suggestions(context, expected_num):
 @when('Click on Sign in')
 def Click_signin_menu(context):
     context.app.main_page.click_signin_menu()
+
+@when('Click cart button')
+def click_cart_button(context):
+    context.app.main_page.click_cart_button()

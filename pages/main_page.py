@@ -8,6 +8,7 @@ class MainPage(Page):
     SEARCH_ICON = (By.CSS_SELECTOR, ".menu__search_submit")
     SUGGESTION_ITEM = (By.CSS_SELECTOR, '#ui-id-1 li')
     SIGNIN_MENU_LOCATOR = (By.XPATH, "//li[@class='menu__session__item']//a[contains(text(),'Sign in')]")
+    CART_LOCATOR = (By.XPATH, "//span[@class='minicart parbase']//a")
 
     def open(self):
         self.open_page('https://www2.hm.com/en_us/index.html')
@@ -36,3 +37,6 @@ class MainPage(Page):
 
     def click_signin_menu(self):
         self.click(*self.SIGNIN_MENU_LOCATOR)
+
+    def click_cart_button(self):
+        self.wait_for_element_click(*self.CART_LOCATOR)
