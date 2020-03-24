@@ -60,4 +60,8 @@ class Page:
         elements = self.find_elements(*locator)
         self.actions.move_to_element(elements[idx]).perform()
 
+    def scroll_into_view(self, *locator):
+        elem = self.driver.find_element(*locator)
+        self.driver.execute_script("arguments[0].scrollIntoView()", elem)
+
 

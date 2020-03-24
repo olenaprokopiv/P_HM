@@ -16,10 +16,9 @@ class ProductPage(Page):
     BLACK_CALOR_LOCATOR = (By.XPATH, "//ul[@class='group']//a[@title='Black']")
 
     def click_select_size(self):
-        sleep(10)
+        self.scroll_into_view(*self.SELECT_SIZE_LOCATOR)
         self.wait_for_element_appear(*self.SELECT_SIZE_LOCATOR)
         self.wait_for_element_click(*self.SELECT_SIZE_LOCATOR)
-        sleep(10)
         self.wait_for_element_appear(*self.CHOOSE_SIZE_LOCATOR)
         self.wait_for_element_click(*self.CHOOSE_SIZE_LOCATOR)
 
