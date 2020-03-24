@@ -5,7 +5,6 @@ from time import sleep
 @when('Click on Sign in')
 def Click_signin_menu(context):
     context.app.signin_page.click_signin_menu()
-    sleep(2)
 
 @when('Input signin email {search_text}')
 def input_email(context, search_text):
@@ -20,5 +19,13 @@ def input_password(context, search_text):
 @when('Click on the SIGN IN')
 def click_submit_signin_button(context):
     context.app.signin_page.click_submit_signin_button()
+
+@when('Click on the My Account')
+def click_my_account_button(context):
+    context.app.signin_page.click_my_account_button()
+
+@then('Results for {signin} is shown')
+def verify_header_result(context, signin):
+    context.app.signin_page.verify_header_result(signin)
 
 

@@ -8,7 +8,9 @@ class SigninPage(Page):
     MEMBER_MENU_LOCATOR = (By.XPATH, "//div[@class='remodal-content']//button[@class='button large secondary']")
     EMAIL_SIGNN_INPUT = (By.ID, 'modal-txt-signin-email' )
     PASSWORD_SIGNIN_INPUT = (By.ID, 'modal-txt-signin-password' )
-    SUBMIT_SIGNIN_LOCATOR = (By.XPATH, "//div[@class='remodal-content']//button[@type='submit'][text()='Sign in']" )
+    SUBMIT_SIGNIN_LOCATOR = (By.XPATH, "//button[@type='submit'][text()='Sign in']")
+    TEXT_SIGNIN_LOCATOR = (By.XPATH, "//div[@id='app']//h2")
+    MY_ACCOUNT_LOCATOR = (By.XPATH, "//a[contains(text(),'My Account') and @class='menu__myhm']")
 
     def click_signin_menu(self):
         self.click(*self.SIGNIN_MENU_LOCATOR)
@@ -26,5 +28,9 @@ class SigninPage(Page):
 
     def click_submit_signin_button(self):
         self.wait_for_element_click(*self.SUBMIT_SIGNIN_LOCATOR)
-        # self.click(*self.SUBMIT_SIGNIN_LOCATOR)
-        # sleep(2)
+
+    def click_my_account_button(self, *locator):
+        self.wait_for_element_click(*self.MY_ACCOUNT_LOCATOR)
+
+    def verify_header_result(self, expected_text: str):
+        self.verify_element_text(expected_text, *self.TEXT_SIGNIN_LOCATOR)

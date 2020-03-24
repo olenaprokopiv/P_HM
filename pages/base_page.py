@@ -46,6 +46,7 @@ class Page:
         self.wait.until(EC.presence_of_element_located(locator))
 
     def verify_element_text(self, expected_text: str, *locator):
+        self.wait_for_element_appear(*locator)
         actual_text = self.driver.find_element(*locator).text
         actual_text_low = actual_text.lower()
         expected_text_low = expected_text.lower()
