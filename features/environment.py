@@ -35,9 +35,9 @@ def browser_init(context):
     # context.driver = EventFiringWebDriver(webdriver.Chrome(chrome_options=chrome_options), MyListner())
 
     context.driver.maximize_window()
-    context.driver.implicitly_wait(2)
+    context.driver.implicitly_wait(5)
     context.app = Application(context.driver)
-    context.wait = WebDriverWait(context.driver, 2)
+    context.wait = WebDriverWait(context.driver, 15)
 
 
 def before_scenario(context, scenario):
