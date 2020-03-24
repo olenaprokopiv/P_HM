@@ -9,9 +9,13 @@ class MainPage(Page):
     SUGGESTION_ITEM = (By.CSS_SELECTOR, '#ui-id-1 li')
     SIGNIN_MENU_LOCATOR = (By.XPATH, "//li[@class='menu__session__item']//a[contains(text(),'Sign in')]")
     CART_LOCATOR = (By.XPATH, "//span[@class='minicart parbase']//a")
+    POPUP_CLOSE_BUTTON = (By.XPATH, "//div[@class='cookie-notification js-notification js-cookie-notification']//button")
 
     def open(self):
         self.open_page('https://www2.hm.com/en_us/index.html')
+
+    def close_popup(self):
+        self.wait_for_element_click(*self.POPUP_CLOSE_BUTTON)
 
     def search_product(self, text: str):
         print('text = ', text)

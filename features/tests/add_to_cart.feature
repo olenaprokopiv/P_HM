@@ -3,6 +3,7 @@ Feature: Test for H&M Search functionality
 
   Scenario: User is able to add an item to the Shopping Cart
   Given Open H&M page
+  Then Close popup
   When Search product Blazers
   When Click image of the first item
   When Select size

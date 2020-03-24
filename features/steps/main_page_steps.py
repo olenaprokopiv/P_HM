@@ -4,6 +4,10 @@ from behave import given, when, then
 def open_hm(context):
     context.app.main_page.open()
 
+@then('Close popup')
+def close_popup(context):
+    context.app.main_page.close_popup()
+
 @when('Input in Search Box {search_text}')
 def input_text_search_box(context, search_text):
     print('search_text = ', search_text)
