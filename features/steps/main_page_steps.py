@@ -23,4 +23,6 @@ def switch_to_saved_window(context):
 def count_suggestions(context, expected_num):
     context.app.main_page.count_suggestions(expected_num)
 
-
+@when('Click on Sign in')
+def Click_signin_menu(context):
+    context.app.main_page.click_signin_menu()

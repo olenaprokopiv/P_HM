@@ -7,6 +7,7 @@ class MainPage(Page):
     SEARCH_INPUT = (By.ID, 'main-search')
     SEARCH_ICON = (By.CSS_SELECTOR, ".menu__search_submit")
     SUGGESTION_ITEM = (By.CSS_SELECTOR, '#ui-id-1 li')
+    SIGNIN_MENU_LOCATOR = (By.XPATH, "//li[@class='menu__session__item']//a[contains(text(),'Sign in')]")
 
     def open(self):
         self.open_page('https://www2.hm.com/en_us/index.html')
@@ -33,3 +34,5 @@ class MainPage(Page):
         else:
             print('Menu elements are not found')
 
+    def click_signin_menu(self):
+        self.click(*self.SIGNIN_MENU_LOCATOR)

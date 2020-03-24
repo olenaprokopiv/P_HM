@@ -2,10 +2,6 @@ from behave import given, when, then
 from time import sleep
 
 
-@when('Click on Sign in')
-def Click_signin_menu(context):
-    context.app.signin_page.click_signin_menu()
-
 @when('Input signin email {search_text}')
 def input_email(context, search_text):
     print('search_text = ', search_text)

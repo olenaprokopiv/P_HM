@@ -4,16 +4,13 @@ from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 class SigninPage(Page):
-    SIGNIN_MENU_LOCATOR = (By.XPATH, "//li[@class='menu__session__item']//a[contains(text(),'Sign in')]")
+
     MEMBER_MENU_LOCATOR = (By.XPATH, "//div[@class='remodal-content']//button[@class='button large secondary']")
     EMAIL_SIGNN_INPUT = (By.ID, 'modal-txt-signin-email' )
     PASSWORD_SIGNIN_INPUT = (By.ID, 'modal-txt-signin-password' )
     SUBMIT_SIGNIN_LOCATOR = (By.XPATH, "//button[@type='submit'][text()='Sign in']")
     TEXT_SIGNIN_LOCATOR = (By.XPATH, "//div[@id='app']//h2")
     MY_ACCOUNT_LOCATOR = (By.XPATH, "//a[contains(text(),'My Account') and @class='menu__myhm']")
-
-    def click_signin_menu(self):
-        self.click(*self.SIGNIN_MENU_LOCATOR)
 
     def click_member_menu_item(self):
         self.click(*self.MEMBER_MENU_LOCATOR)
